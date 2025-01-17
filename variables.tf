@@ -7,7 +7,7 @@ variable "credentials" {
 
 variable "project" {
   description = "Project"
-  default     = "del-this-448102"
+  default     = "airflow-test-447115"
 }
 
 variable "region" {

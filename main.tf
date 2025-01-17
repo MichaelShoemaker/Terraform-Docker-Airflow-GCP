@@ -56,7 +56,7 @@ metadata = {
     cd ./airflow-docker-compose2025
     sudo usermod -aG docker ${var.user}
     newgrp docker
-    sleep 10
+    sudo docker compose up airflow-init
     sudo docker compose up -d 
   EOF
     }
