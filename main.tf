@@ -23,7 +23,7 @@ locals {
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "ubuntu-docker"
+  name         = "ubuntu-airflow"
   machine_type = "e2-medium"
   zone         = var.zone
 
