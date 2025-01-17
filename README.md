@@ -15,8 +15,8 @@ Name it terra-airflow or update the varaibles.tf file variable</br>
 ![til](./images/AddServiceAccount.gif)
 
 ## Update the Variables.tf File 
-Update the variables in variables.tf to match your project.<br>
-A good way to do this is to look at the Dashboard for the project name<br>
-Go to Compute Engine and click the Create Instance button.<br>
-The default shown for Region and Zone are most likely what you want to use.</br>
+Update the variables in variables.tf to match your project.<br><br>
+A good way to do this is to look at the Dashboard for the project name<br><br>
+Go to Compute Engine and click the Create Instance button.<br><br>
+The default shown for Region and Zone are most likely what you want to use.</br><br>
 ![til](./images/SetVariables.gif)
