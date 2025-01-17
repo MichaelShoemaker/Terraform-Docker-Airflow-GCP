@@ -20,3 +20,6 @@ A good way to do this is to look at the Dashboard for the project name<br><br>
 Go to Compute Engine and click the Create Instance button.<br><br>
 The default shown for Region and Zone are most likely what you want to use.</br><br>
 ![til](./images/SetVariables.gif)
+
+
+## Generate an SSH Key Pair
