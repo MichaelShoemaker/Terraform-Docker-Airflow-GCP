@@ -54,10 +54,10 @@ metadata = {
     cd /home/${var.user}
     git clone https://github.com/MichaelShoemaker/airflow-docker-compose2025.git
     cd ./airflow-docker-compose2025
+    sudo mkdir -p ./dags ./logs ./plugins ./config
     sudo usermod -aG docker ${var.user}
     newgrp docker
     sudo docker compose up airflow-init
-    sudo docker compose up -d 
   EOF
     }
 }
