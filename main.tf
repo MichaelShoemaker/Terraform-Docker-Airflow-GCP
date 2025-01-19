@@ -20,6 +20,8 @@ provider "google" {
 # Read in script file
 locals {
   script_content = file("Install_docker.sh")
+  gsc_service_acct = file(".google/credentials/google_credentials.json")
+  gsc_service_acct_base64 = base64encode(file(".google/credentials/google_credentials.json"))
 }
 
 resource "google_compute_instance" "vm_instance" {
@@ -47,22 +49,38 @@ metadata = {
   ssh-keys = "${var.user}:${file(var.ssh_key_file)}"
   user-data = <<-EOF
     #!/bin/bash
+    
     sudo apt-get update
     echo '${local.script_content}' > /tmp/install_docker.sh
     chmod +x /tmp/install_docker.sh
     bash /tmp/install_docker.sh
-    cd /home/${var.user}
+
+    sudo mkdir -p /home/${var.user}/.google/credentials
+    chmod -R 755 /home/${var.user}/.google
+
+
+    cd /home/${var.user} 
     git clone https://github.com/MichaelShoemaker/airflow-docker-compose2025.git
+
+    sudo mkdir -p /home/${var.user}/airflow-docker-compose2025/.google/credentials
+    chmod -R 755 /home/${var.user}/airflow-docker-compose2025/.google
+    
+    echo '${local.gsc_service_acct}' > /home/${var.user}/airflow-docker-compose2025/.google/credentials/google_credentials.json
     cd ./airflow-docker-compose2025
-    su gary
+
+    
+    echo "This is a file created on $(date)" > /home/gary/"$(date +"%Y-%m-%d_%H-%M-%S").txt"
+
     sudo mkdir -p ./dags ./logs ./plugins ./config
     sudo chown -R 1001:1001 ./dags ./logs ./plugins ./config
     chmod -R 775 ./dags ./logs ./plugins ./config
     sudo usermod -aG docker ${var.user}
     newgrp docker
     docker compose up airflow-init
+
     sleep 30
     docker compose up
+
   EOF
     }
 }
