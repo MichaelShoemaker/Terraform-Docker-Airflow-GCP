@@ -21,7 +21,7 @@ users:
   - name: gary
     groups: sudo, docker
     shell: /bin/bash
-    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
     ssh_authorized_keys:
       - {ssh_key}
 
@@ -29,13 +29,13 @@ write_files:
   - path: /tmp/install_docker.sh
     permissions: '0755'
     content: |
-{script_content.replace('\n', '\n      ')}
+      {script_content.replace('\n', '\n      ')}
 
   - path: /home/gary/airflow-docker-compose2025/.google/credentials/google_credentials.json
     permissions: '0755'
     owner: gary:gary
     content: |
-{service_account.replace('\n', '\n      ')}
+      {service_account.replace('\n', '\n      ')}
 
 runcmd:
   - sudo apt-get update
