@@ -17,11 +17,8 @@ provider "google" {
   region  = var.region
 }
 
-# Read in script file
+
 locals {
-  script_content = file("Install_docker.sh")
-  gsc_service_acct = file(".google/credentials/google_credentials.json")
-  gsc_service_acct_base64 = base64encode(file(".google/credentials/google_credentials.json"))
   user_script_yaml = file("user-data.yaml")
 }
 

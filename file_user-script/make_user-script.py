@@ -78,6 +78,6 @@ fi
 # Write the cloud-config to a file
 output_path = "user-data.yaml"
 with open(output_path, "w") as file:
-file.write(cloud_config)
+  file.write(cloud_config)
 
 print(f"Cloud-init configuration written to {output_path}")
