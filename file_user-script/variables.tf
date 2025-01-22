@@ -1,7 +1,7 @@
 
 variable "credentials" {
   description = "My Credentials"
-  default     = ".,/.google/terra-airflow.json"
+  default     = "../.google/terra-airflow.json"
 }
 
 
