@@ -42,5 +42,20 @@ The files as is will be looking for a private and public key pair with the name 
 You will now need to generate a Service Account with permissions to upload to a GCP Bucket.
 ![til](./images/gsc_servAcct.png)
 
-Create a key file for the service acount and place it in **.google/credentials/google_credentials.json
+Create a key file for the service acount and place it at **.google/credentials/google_credentials.json**
 ![til](./images/google_credentials.png)
+
+## Deploy to GCP
+From either the<br>
+file_user-script<br>
+or
+inline_user-script<br>
+directories run<br>
+```bash
+terraform plan
+```
+to check for errors<br>
+```bash
+terraform apply
+```
+to deploly to GCP
