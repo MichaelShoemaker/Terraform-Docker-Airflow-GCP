@@ -1,6 +1,8 @@
 # Terraform-Docker-Airflow-GCP
 Terraform Files to Create a GCP VM Install Docker Docker-Compose and Run Airflow
 
+## Walkthrough Video for Setup
+[![Setup Walkthrough](https://img.youtube.com/vi/HgCRclidDOQ/0.jpg)]([https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE](https://www.youtube.com/watch?v=HgCRclidDOQ))
 
 ## Create a Project in GCP
 ![til](./images/CreateProject.gif)
