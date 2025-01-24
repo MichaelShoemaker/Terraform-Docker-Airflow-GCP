@@ -40,3 +40,7 @@ The files as is will be looking for a private and public key pair with the name 
 
 ## Create Service Account for Airflow
 You will now need to generate a Service Account with permissions to upload to a GCP Bucket.
+![til](./images/gsc_servAcct.png)
+
+Create a key file for the service acount and place it in **.google/credentials/google_credentials.json
+![til](./images/google_credentials.png)
